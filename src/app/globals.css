@@ -1,0 +1,161 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #fff6ed;
+  --color-brand-100: #ffe9d4;
+  --color-brand-200: #ffd0a8;
+  --color-brand-300: #ffae70;
+  --color-brand-400: #ff8236;
+  --color-brand-500: #f56410;
+  --color-brand-600: #e14b06;
+  --color-brand-700: #ba3608;
+  --color-brand-800: #942c0e;
+  --color-brand-900: #78270f;
+  --color-steel-50: #f6f7f9;
+  --color-steel-100: #eceef2;
+  --color-steel-200: #d5dae2;
+  --color-steel-300: #b0b9c8;
+  --color-steel-400: #8593a9;
+  --color-steel-500: #66768e;
+  --color-steel-600: #515e75;
+  --color-steel-700: #434d5f;
+  --color-steel-800: #3a4250;
+  --color-steel-900: #1f242e;
+  --color-steel-950: #14171e;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+@layer components {
+  .container-x {
+    margin-inline: auto;
+    width: 100%;
+    max-width: 80rem;
+    padding-inline: 1rem;
+  }
+  @media (min-width: 640px) {
+    .container-x {
+      padding-inline: 1.5rem;
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-x {
+      padding-inline: 2rem;
+    }
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-dark,
+  .btn-outline,
+  .btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 0.375rem;
+    padding: 0.75rem 1.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 600;
+    transition: background-color 150ms, border-color 150ms, color 150ms;
+    cursor: pointer;
+  }
+  .btn:focus-visible,
+  .btn-primary:focus-visible,
+  .btn-dark:focus-visible,
+  .btn-outline:focus-visible,
+  .btn-whatsapp:focus-visible {
+    outline: 2px solid var(--color-brand-500);
+    outline-offset: 2px;
+  }
+  .btn-primary {
+    background-color: var(--color-brand-500);
+    color: #fff;
+  }
+  .btn-primary:hover {
+    background-color: var(--color-brand-600);
+  }
+  .btn-dark {
+    background-color: var(--color-steel-900);
+    color: #fff;
+  }
+  .btn-dark:hover {
+    background-color: var(--color-steel-800);
+  }
+  .btn-outline {
+    border: 1px solid var(--color-steel-300);
+    background-color: #fff;
+    color: var(--color-steel-900);
+  }
+  .btn-outline:hover {
+    border-color: var(--color-steel-900);
+  }
+  .btn-whatsapp {
+    background-color: #25d366;
+    color: #fff;
+  }
+  .btn-whatsapp:hover {
+    background-color: #1ebe5b;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    font-weight: 500;
+    color: var(--color-steel-700);
+  }
+  .input {
+    width: 100%;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-steel-300);
+    background-color: #fff;
+    padding: 0.625rem 0.75rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--color-steel-900);
+  }
+  .input::placeholder {
+    color: var(--color-steel-400);
+  }
+  .input:focus {
+    outline: none;
+    border-color: var(--color-brand-500);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-brand-500) 30%, transparent);
+  }
+
+  .eyebrow {
+    font-size: 0.75rem;
+    line-height: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: var(--color-brand-600);
+  }
+
+  .grid-pattern {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  .print-break {
+    break-inside: avoid;
+  }
+  body {
+    background: white !important;
+  }
+}
